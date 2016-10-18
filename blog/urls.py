@@ -18,4 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^index/$','blogpost.views.index'),
+    url(r'^blog/(?P<slug>[^\.]+).html','blogpost.views.view_post',name='view_blog_post'),
 ]
