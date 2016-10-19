@@ -5,7 +5,9 @@ from blogpost.views import view_post,index
 from blogpost.models import Blogpost
 import datetime
 
+
 # Create your tests here.
+# Test
 class HomePageTest(TestCase):
 
     def test_index_resolves_to_index_view(self):

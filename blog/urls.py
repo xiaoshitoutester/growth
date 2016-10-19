@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.contrib import admin
 from blogpost import views as blogpostview
 
@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',blogpostview.index),
     url(r'^blog/(?P<slug>[^\.]+).html',blogpostview.view_post,name='view_blog_post'),
+    url(r'^api-auth/',include('rest_framework.urls',namespace='rest_frameworks')),
 ]
